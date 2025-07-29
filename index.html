@@ -244,8 +244,8 @@
                     <div class="font-bangers text-xl text-black">1B $BONKU</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-press-start text-sm text-black mb-2">BURNED</div>
-                    <div class="font-bangers text-xl text-black">50% 🔥</div>
+                    <div class="font-press-start text-sm text-black mb-2">CA</div>
+                    <div class="font-bangers text-sm text-black break-all">eV6P1gi6v...WLbonk</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
                     <div class="font-press-start text-sm text-black mb-2">LP LOCKED</div>
@@ -289,9 +289,24 @@
         <!-- Footer -->
         <div class="mt-16 text-center">
             <p class="font-rubik text-gray-400 mb-4">Contract Address:</p>
-            <div class="bg-gray-800 bg-opacity-70 p-3 rounded-lg border border-yellow-400 max-w-md mx-auto">
-                <code class="font-mono text-yellow-400 text-sm break-all">Coming Soon - Stay Tuned!</code>
+            <div class="bg-gray-800 bg-opacity-70 p-3 rounded-lg border border-yellow-400 max-w-lg mx-auto">
+                <code class="font-mono text-yellow-400 text-xs break-all">eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk</code>
             </div>
+            
+            <!-- Community Links -->
+            <div class="mt-8 space-y-4">
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <a href="https://x.com/i/communities/1949972261819076965" target="_blank" rel="noopener noreferrer" 
+                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-permanent-marker transition-colors flex items-center gap-2">
+                        🐦 X Community
+                    </a>
+                    <a href="https://letsbonk.fun/token/eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk" target="_blank" rel="noopener noreferrer" 
+                       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-permanent-marker transition-colors flex items-center gap-2">
+                        🚀 Bonk Launch
+                    </a>
+                </div>
+            </div>
+            
             <p class="font-rubik text-gray-500 mt-8 text-sm">
                 $BONKU is a meme token on Solana. Do your own research. Not financial advice.
             </p>
@@ -348,7 +363,7 @@
         // Button Click Handlers
         function buyToken() {
             spawnDynamicTextEffect();
-            alert('Get ready to power up! Token purchase coming soon! 🚀');
+            window.open('https://letsbonk.fun/token/eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk', '_blank');
         }
 
         function openChart() {
@@ -358,7 +373,7 @@
 
         function joinCommunity() {
             spawnDynamicTextEffect();
-            alert('Telegram community launching soon! Join the Saiyan army! 🔥');
+            window.open('https://x.com/i/communities/1949972261819076965', '_blank');
         }
 
         // Three.js 3D Background Effect
