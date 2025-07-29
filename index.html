@@ -7,7 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Anime/Manga feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Rubik:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Rubik:wght@400;700&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Audiowide&family=Righteous&display=swap" rel="stylesheet">
     <!-- Three.js CDN for 3D rendering -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
@@ -15,7 +15,10 @@
         .font-bangers { font-family: 'Bangers', cursive; }
         .font-permanent-marker { font-family: 'Permanent Marker', cursive; }
         .font-rubik { font-family: 'Rubik', sans-serif; }
-        .font-press-start { font-family: 'Press Start 2P', cursive; } /* For boom/pow effects */
+        .font-press-start { font-family: 'Press Start 2P', cursive; }
+        .font-orbitron { font-family: 'Orbitron', monospace; }
+        .font-audiowide { font-family: 'Audiowide', cursive; }
+        .font-righteous { font-family: 'Righteous', cursive; }
 
         /* Custom CSS for Anime Effects */
         body {
@@ -122,6 +125,26 @@
             pointer-events: none; /* Allow clicks to pass through */
         }
 
+        /* 3D Power Ball Container */
+        .power-ball-container {
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 200px;
+            height: 200px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .power-ball-container {
+                width: 120px;
+                height: 120px;
+                top: 5%;
+                right: 5%;
+            }
+        }
+
         /* Keyframe Animations */
         @keyframes floatAndFade {
             0%, 100% { 
@@ -205,6 +228,11 @@
 
     <!-- Three.js Canvas for 3D Effects -->
     <canvas id="threejs-canvas"></canvas>
+    
+    <!-- 3D Power Ball -->
+    <div class="power-ball-container">
+        <canvas id="power-ball-canvas"></canvas>
+    </div>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -212,24 +240,24 @@
         <p class="hero-subtitle font-rubik">The Ultimate Solana Saiyan Token - Power Up Your Portfolio!</p>
         
         <div class="mt-8">
-            <a href="#" class="cta-button font-permanent-marker" onclick="buyToken()">🚀 BUY $BONKU</a>
-            <a href="#" class="cta-button font-permanent-marker" onclick="openChart()">📈 VIEW CHART</a>
-            <a href="#" class="cta-button font-permanent-marker" onclick="joinCommunity()">🔥 JOIN TELEGRAM</a>
+            <a href="#" class="cta-button font-orbitron" onclick="buyToken()">BUY $BONKU</a>
+            <a href="#" class="cta-button font-orbitron" onclick="openChart()">VIEW CHART</a>
+            <a href="#" class="cta-button font-orbitron" onclick="joinCommunity()">JOIN COMMUNITY</a>
         </div>
 
         <!-- Token Info Section -->
         <div class="mt-12 max-w-4xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-bangers text-2xl text-yellow-400 mb-3">⚡ SUPER SAIYAN POWER</h3>
+                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">SUPER SAIYAN POWER</h3>
                     <p class="font-rubik text-gray-300">Harness the energy of the strongest warriors in the universe. $BONKU channels pure Saiyan power into the Solana blockchain!</p>
                 </div>
                 <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-bangers text-2xl text-yellow-400 mb-3">🌟 LEGENDARY GAINS</h3>
+                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">LEGENDARY GAINS</h3>
                     <p class="font-rubik text-gray-300">Join the elite warriors who understand that true power comes from diamond hands and community strength!</p>
                 </div>
                 <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-bangers text-2xl text-yellow-400 mb-3">🔥 KAMEHAMEHA REWARDS</h3>
+                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">KAMEHAMEHA REWARDS</h3>
                     <p class="font-rubik text-gray-300">Explosive rewards await those brave enough to power up with $BONKU. The universe's strongest token!</p>
                 </div>
             </div>
@@ -240,20 +268,20 @@
             <h2 class="font-bangers text-4xl text-center mb-8 text-yellow-400">POWER LEVEL: OVER 9000!</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-press-start text-sm text-black mb-2">SUPPLY</div>
-                    <div class="font-bangers text-xl text-black">1B $BONKU</div>
+                    <div class="font-orbitron text-sm text-black mb-2 font-bold">SUPPLY</div>
+                    <div class="font-righteous text-xl text-black">1B $BONKU</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-press-start text-sm text-black mb-2">CA</div>
-                    <div class="font-bangers text-sm text-black break-all">eV6P1gi6v...WLbonk</div>
+                    <div class="font-orbitron text-sm text-black mb-2 font-bold">CONTRACT</div>
+                    <div class="font-righteous text-sm text-black break-all">eV6P1gi6v...WLbonk</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-press-start text-sm text-black mb-2">LP LOCKED</div>
-                    <div class="font-bangers text-xl text-black">FOREVER 🔒</div>
+                    <div class="font-orbitron text-sm text-black mb-2 font-bold">LP LOCKED</div>
+                    <div class="font-righteous text-xl text-black">FOREVER</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-press-start text-sm text-black mb-2">SAIYANS</div>
-                    <div class="font-bangers text-xl text-black">GROWING 💪</div>
+                    <div class="font-orbitron text-sm text-black mb-2 font-bold">SAIYANS</div>
+                    <div class="font-righteous text-xl text-black">GROWING</div>
                 </div>
             </div>
         </div>
@@ -263,23 +291,29 @@
             <h2 class="font-bangers text-4xl text-center mb-8 text-yellow-400">SAIYAN EVOLUTION ROADMAP</h2>
             <div class="space-y-6">
                 <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-green-400">
-                    <span class="text-2xl">✅</span>
+                    <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
+                        <span class="font-orbitron text-black font-bold text-sm">1</span>
+                    </div>
                     <div>
-                        <h3 class="font-permanent-marker text-green-400">PHASE 1: BIRTH OF A SAIYAN</h3>
+                        <h3 class="font-audiowide text-green-400">PHASE 1: BIRTH OF A SAIYAN</h3>
                         <p class="font-rubik text-gray-300">Token Launch • Community Building • Initial Training</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-yellow-400">
-                    <span class="text-2xl">🔄</span>
+                    <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                        <span class="font-orbitron text-black font-bold text-sm">2</span>
+                    </div>
                     <div>
-                        <h3 class="font-permanent-marker text-yellow-400">PHASE 2: SUPER SAIYAN AWAKENING</h3>
+                        <h3 class="font-audiowide text-yellow-400">PHASE 2: SUPER SAIYAN AWAKENING</h3>
                         <p class="font-rubik text-gray-300">CEX Listings • Marketing Campaigns • Power Level 9000+</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-orange-400">
-                    <span class="text-2xl">⏳</span>
+                    <div class="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
+                        <span class="font-orbitron text-black font-bold text-sm">3</span>
+                    </div>
                     <div>
-                        <h3 class="font-permanent-marker text-orange-400">PHASE 3: LEGENDARY TRANSFORMATION</h3>
+                        <h3 class="font-audiowide text-orange-400">PHASE 3: LEGENDARY TRANSFORMATION</h3>
                         <p class="font-rubik text-gray-300">NFT Collection • Staking Rewards • Universe Domination</p>
                     </div>
                 </div>
@@ -297,12 +331,12 @@
             <div class="mt-8 space-y-4">
                 <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                     <a href="https://x.com/i/communities/1949972261819076965" target="_blank" rel="noopener noreferrer" 
-                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-permanent-marker transition-colors flex items-center gap-2">
-                        🐦 X Community
+                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-orbitron transition-colors flex items-center gap-2">
+                        X COMMUNITY
                     </a>
                     <a href="https://letsbonk.fun/token/eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk" target="_blank" rel="noopener noreferrer" 
-                       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-permanent-marker transition-colors flex items-center gap-2">
-                        🚀 Bonk Launch
+                       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-orbitron transition-colors flex items-center gap-2">
+                        BONK LAUNCH
                     </a>
                 </div>
             </div>
@@ -378,6 +412,9 @@
 
         // Three.js 3D Background Effect
         let scene, camera, renderer, particles;
+        
+        // Power Ball 3D Scene
+        let powerBallScene, powerBallCamera, powerBallRenderer, powerBall, powerBallText;
 
         function initThreeJS() {
             // Scene setup
@@ -493,8 +530,172 @@
             particles.geometry.attributes.position.needsUpdate = true;
             particles.geometry.attributes.size.needsUpdate = true;
 
-
             renderer.render(scene, camera);
+            
+            // Animate power ball
+            animatePowerBall();
+        }
+
+        // Initialize 3D Power Ball
+        function initPowerBall() {
+            const container = document.querySelector('.power-ball-container');
+            const canvas = document.getElementById('power-ball-canvas');
+            
+            // Scene setup
+            powerBallScene = new THREE.Scene();
+            powerBallCamera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            powerBallRenderer = new THREE.WebGLRenderer({ 
+                canvas: canvas, 
+                alpha: true,
+                antialias: true 
+            });
+            
+            const size = container.offsetWidth;
+            powerBallRenderer.setSize(size, size);
+            powerBallRenderer.setClearColor(0x000000, 0);
+
+            // Create glowing sphere (power ball)
+            const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+            const sphereMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 },
+                    glowColor: { value: new THREE.Color(0xffeb3b) }
+                },
+                vertexShader: `
+                    varying vec3 vNormal;
+                    varying vec3 vPosition;
+                    void main() {
+                        vNormal = normalize(normalMatrix * normal);
+                        vPosition = position;
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    uniform float time;
+                    uniform vec3 glowColor;
+                    varying vec3 vNormal;
+                    varying vec3 vPosition;
+                    
+                    void main() {
+                        float intensity = pow(0.7 - dot(vNormal, vec3(0, 0, 1.0)), 2.0);
+                        vec3 glow = glowColor * intensity;
+                        
+                        // Add energy pattern
+                        float pattern = sin(vPosition.x * 10.0 + time * 2.0) * 
+                                       sin(vPosition.y * 10.0 + time * 1.5) * 
+                                       sin(vPosition.z * 10.0 + time * 2.5);
+                        pattern = pattern * 0.1 + 0.9;
+                        
+                        gl_FragColor = vec4(glow * pattern, 0.8);
+                    }
+                `,
+                transparent: true,
+                blending: THREE.AdditiveBlending
+            });
+
+            powerBall = new THREE.Mesh(sphereGeometry, sphereMaterial);
+            powerBallScene.add(powerBall);
+
+            // Add outer glow ring
+            const ringGeometry = new THREE.RingGeometry(1.2, 1.5, 32);
+            const ringMaterial = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0 }
+                },
+                vertexShader: `
+                    varying vec2 vUv;
+                    void main() {
+                        vUv = uv;
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    uniform float time;
+                    varying vec2 vUv;
+                    void main() {
+                        float dist = distance(vUv, vec2(0.5));
+                        float alpha = sin(time * 3.0) * 0.3 + 0.7;
+                        gl_FragColor = vec4(1.0, 0.8, 0.0, (1.0 - dist) * alpha);
+                    }
+                `,
+                transparent: true,
+                side: THREE.DoubleSide
+            });
+
+            const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+            powerBallScene.add(ring);
+
+            // Create 3D text for $BONKU
+            const loader = new THREE.FontLoader();
+            // Since we can't load external fonts easily, we'll create a text sprite instead
+            createPowerBallText();
+
+            powerBallCamera.position.z = 3;
+
+            // Handle resize
+            function handlePowerBallResize() {
+                const newSize = container.offsetWidth;
+                powerBallRenderer.setSize(newSize, newSize);
+            }
+            window.addEventListener('resize', handlePowerBallResize);
+        }
+
+        function createPowerBallText() {
+            // Create text using canvas texture
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 512;
+            canvas.height = 128;
+            
+            context.fillStyle = 'rgba(255, 235, 59, 1)';
+            context.font = 'bold 60px Orbitron';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText('$BONKU', 256, 64);
+            
+            // Add glow effect
+            context.shadowColor = '#ffeb3b';
+            context.shadowBlur = 20;
+            context.fillText('$BONKU', 256, 64);
+
+            const texture = new THREE.CanvasTexture(canvas);
+            const material = new THREE.SpriteMaterial({ 
+                map: texture, 
+                transparent: true,
+                alphaTest: 0.1
+            });
+            
+            powerBallText = new THREE.Sprite(material);
+            powerBallText.scale.set(2, 0.5, 1);
+            powerBallText.position.set(0, -1.8, 0);
+            powerBallScene.add(powerBallText);
+        }
+
+        function animatePowerBall() {
+            if (!powerBall || !powerBallRenderer) return;
+            
+            const time = Date.now() * 0.001;
+            
+            // Rotate power ball
+            powerBall.rotation.x += 0.01;
+            powerBall.rotation.y += 0.015;
+            
+            // Update shader uniforms
+            powerBall.material.uniforms.time.value = time;
+            
+            // Animate the ring
+            const ring = powerBallScene.children[1];
+            if (ring) {
+                ring.rotation.z += 0.02;
+                ring.material.uniforms.time.value = time;
+            }
+            
+            // Gentle float animation for text
+            if (powerBallText) {
+                powerBallText.position.y = -1.8 + Math.sin(time * 2) * 0.1;
+            }
+            
+            powerBallRenderer.render(powerBallScene, powerBallCamera);
         }
 
         // Initialize particles, dynamic text, and Three.js on window load
@@ -502,6 +703,7 @@
             createEnergyParticles();
             setInterval(spawnDynamicTextEffect, Math.random() * 2000 + 1000);
             initThreeJS(); // Initialize Three.js scene
+            initPowerBall(); // Initialize 3D Power Ball
             animate(); // Start the Three.js animation loop
         };
     </script>
