@@ -1,0 +1,30 @@
+{
+  "name": "bonku-website",
+  "version": "1.0.0",
+  "description": "$BONKU - The Ultimate Solana Saiyan Token Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve .",
+    "build": "echo 'No build step needed for static site'"
+  },
+  "keywords": [
+    "solana",
+    "token",
+    "crypto",
+    "meme",
+    "bonku",
+    "saiyan",
+    "anime"
+  ],
+  "author": "BONKU Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/bonku-website.git"
+  },
+  "homepage": "https://bonku-website.vercel.app",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
