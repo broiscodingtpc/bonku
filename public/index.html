@@ -6,19 +6,22 @@
     <title>$BONKU - The Solana Saiyan Token</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Anime/Manga feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Rubik:wght@400;700&family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Audiowide&family=Righteous&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Naruto/Anime feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Creepster&family=Nosifer&family=Butcherman&family=Metal+Mania&family=Rye&family=Monoton&family=Bungee+Shade&family=Fascinate&family=Caesar+Dressing&display=swap" rel="stylesheet">
     <!-- Three.js CDN for 3D rendering -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
-        /* Custom Fonts */
+        /* Naruto-Style Fonts */
         .font-bangers { font-family: 'Bangers', cursive; }
-        .font-permanent-marker { font-family: 'Permanent Marker', cursive; }
-        .font-rubik { font-family: 'Rubik', sans-serif; }
-        .font-press-start { font-family: 'Press Start 2P', cursive; }
-        .font-orbitron { font-family: 'Orbitron', monospace; }
-        .font-audiowide { font-family: 'Audiowide', cursive; }
-        .font-righteous { font-family: 'Righteous', cursive; }
+        .font-creepster { font-family: 'Creepster', cursive; }
+        .font-nosifer { font-family: 'Nosifer', cursive; }
+        .font-butcherman { font-family: 'Butcherman', cursive; }
+        .font-metal-mania { font-family: 'Metal Mania', cursive; }
+        .font-rye { font-family: 'Rye', cursive; }
+        .font-monoton { font-family: 'Monoton', cursive; }
+        .font-bungee-shade { font-family: 'Bungee Shade', cursive; }
+        .font-fascinate { font-family: 'Fascinate', cursive; }
+        .font-caesar-dressing { font-family: 'Caesar Dressing', cursive; }
 
         /* Custom CSS for Anime Effects */
         body {
@@ -84,7 +87,7 @@
         /* Buttons with more Energy */
         .cta-button {
             background: linear-gradient(45deg, #ff6b35, #f7931e);
-            border: 3px solid #ffeb3b; /* Bold border */
+            border: none;
             color: white;
             padding: 15px 30px;
             font-size: 1.25rem;
@@ -94,14 +97,13 @@
             margin: 10px;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 0 20px rgba(255,107,53,0.5), inset 0 0 20px rgba(255,255,255,0.1); /* Inner and outer glow */
-            animation: buttonBounce 3s ease-in-out infinite; /* Continuous bounce */
+            box-shadow: 0 0 20px rgba(255,107,53,0.5), inset 0 0 20px rgba(255,255,255,0.1);
+            animation: buttonBounce 3s ease-in-out infinite;
         }
 
         .cta-button:hover {
             transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 0 40px rgba(255,107,53,0.8), inset 0 0 30px rgba(255,255,255,0.2); /* Enhanced glow on hover */
-            border-color: #ff6b35;
+            box-shadow: 0 0 40px rgba(255,107,53,0.8), inset 0 0 30px rgba(255,255,255,0.2);
         }
 
         /* Dynamic Text Effects */
@@ -128,10 +130,11 @@
         /* 3D Power Ball Container */
         .power-ball-container {
             position: absolute;
-            top: 10%;
-            right: 10%;
-            width: 200px;
-            height: 200px;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 250px;
             z-index: 5;
             pointer-events: none;
             filter: drop-shadow(0 0 30px rgba(255, 235, 59, 0.7));
@@ -176,10 +179,9 @@
 
         @media (max-width: 768px) {
             .power-ball-container {
-                width: 120px;
-                height: 120px;
-                top: 5%;
-                right: 5%;
+                width: 180px;
+                height: 180px;
+                top: 10%;
             }
         }
 
@@ -274,85 +276,85 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <h1 class="hero-title font-bangers">$BONKU</h1>
-        <p class="hero-subtitle font-rubik">The Ultimate Solana Saiyan Token - Power Up Your Portfolio!</p>
+        <h1 class="hero-title font-bungee-shade">$BONKU</h1>
+        <p class="hero-subtitle font-creepster">The Ultimate Solana Saiyan Token - Power Up Your Portfolio!</p>
         
         <div class="mt-8">
-            <a href="#" class="cta-button font-orbitron" onclick="buyToken()">BUY $BONKU</a>
-            <a href="#" class="cta-button font-orbitron" onclick="openChart()">VIEW CHART</a>
-            <a href="#" class="cta-button font-orbitron" onclick="joinCommunity()">JOIN COMMUNITY</a>
+            <a href="#" class="cta-button font-metal-mania" onclick="buyToken()">BUY $BONKU</a>
+            <a href="#" class="cta-button font-metal-mania" onclick="openChart()">VIEW CHART</a>
+            <a href="#" class="cta-button font-metal-mania" onclick="joinCommunity()">JOIN COMMUNITY</a>
         </div>
 
         <!-- Token Info Section -->
         <div class="mt-12 max-w-4xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">SUPER SAIYAN POWER</h3>
-                    <p class="font-rubik text-gray-300">Harness the energy of the strongest warriors in the universe. $BONKU channels pure Saiyan power into the Solana blockchain!</p>
+                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg transition-colors">
+                    <h3 class="font-nosifer text-2xl text-yellow-400 mb-3">SUPER SAIYAN POWER</h3>
+                    <p class="font-caesar-dressing text-gray-300">Harness the energy of the strongest warriors in the universe. $BONKU channels pure Saiyan power into the Solana blockchain!</p>
                 </div>
-                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">LEGENDARY GAINS</h3>
-                    <p class="font-rubik text-gray-300">Join the elite warriors who understand that true power comes from diamond hands and community strength!</p>
+                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg transition-colors">
+                    <h3 class="font-nosifer text-2xl text-yellow-400 mb-3">LEGENDARY GAINS</h3>
+                    <p class="font-caesar-dressing text-gray-300">Join the elite warriors who understand that true power comes from diamond hands and community strength!</p>
                 </div>
-                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg border-2 border-yellow-400 hover:border-orange-400 transition-colors">
-                    <h3 class="font-audiowide text-2xl text-yellow-400 mb-3">KAMEHAMEHA REWARDS</h3>
-                    <p class="font-rubik text-gray-300">Explosive rewards await those brave enough to power up with $BONKU. The universe's strongest token!</p>
+                <div class="bg-gray-800 bg-opacity-70 p-6 rounded-lg transition-colors">
+                    <h3 class="font-nosifer text-2xl text-yellow-400 mb-3">KAMEHAMEHA REWARDS</h3>
+                    <p class="font-caesar-dressing text-gray-300">Explosive rewards await those brave enough to power up with $BONKU. The universe's strongest token!</p>
                 </div>
             </div>
         </div>
 
         <!-- Token Stats Section -->
         <div class="mt-16 max-w-6xl mx-auto px-4">
-            <h2 class="font-bangers text-4xl text-center mb-8 text-yellow-400">POWER LEVEL: OVER 9000!</h2>
+            <h2 class="font-monoton text-4xl text-center mb-8 text-yellow-400">POWER LEVEL: OVER 9000!</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-orbitron text-sm text-black mb-2 font-bold">SUPPLY</div>
-                    <div class="font-righteous text-xl text-black">1B $BONKU</div>
+                    <div class="font-butcherman text-sm text-black mb-2 font-bold">SUPPLY</div>
+                    <div class="font-rye text-xl text-black">1B $BONKU</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-orbitron text-sm text-black mb-2 font-bold">CONTRACT</div>
-                    <div class="font-righteous text-sm text-black break-all">eV6P1gi6v...WLbonk</div>
+                    <div class="font-butcherman text-sm text-black mb-2 font-bold">CONTRACT</div>
+                    <div class="font-rye text-sm text-black break-all">eV6P1gi6v...WLbonk</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-orbitron text-sm text-black mb-2 font-bold">LP LOCKED</div>
-                    <div class="font-righteous text-xl text-black">FOREVER</div>
+                    <div class="font-butcherman text-sm text-black mb-2 font-bold">LP LOCKED</div>
+                    <div class="font-rye text-xl text-black">FOREVER</div>
                 </div>
                 <div class="bg-gradient-to-b from-yellow-400 to-orange-500 p-4 rounded-lg">
-                    <div class="font-orbitron text-sm text-black mb-2 font-bold">SAIYANS</div>
-                    <div class="font-righteous text-xl text-black">GROWING</div>
+                    <div class="font-butcherman text-sm text-black mb-2 font-bold">SAIYANS</div>
+                    <div class="font-rye text-xl text-black">GROWING</div>
                 </div>
             </div>
         </div>
 
         <!-- Roadmap Section -->
         <div class="mt-16 max-w-4xl mx-auto px-4">
-            <h2 class="font-bangers text-4xl text-center mb-8 text-yellow-400">SAIYAN EVOLUTION ROADMAP</h2>
+            <h2 class="font-fascinate text-4xl text-center mb-8 text-yellow-400">SAIYAN EVOLUTION ROADMAP</h2>
             <div class="space-y-6">
-                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-green-400">
+                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg">
                     <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center">
-                        <span class="font-orbitron text-black font-bold text-sm">1</span>
+                        <span class="font-butcherman text-black font-bold text-sm">1</span>
                     </div>
                     <div>
-                        <h3 class="font-audiowide text-green-400">PHASE 1: BIRTH OF A SAIYAN</h3>
-                        <p class="font-rubik text-gray-300">Token Launch • Community Building • Initial Training</p>
+                        <h3 class="font-creepster text-green-400">PHASE 1: BIRTH OF A SAIYAN</h3>
+                        <p class="font-caesar-dressing text-gray-300">Token Launch • Community Building • Initial Training</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-yellow-400">
+                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg">
                     <div class="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                        <span class="font-orbitron text-black font-bold text-sm">2</span>
+                        <span class="font-butcherman text-black font-bold text-sm">2</span>
                     </div>
                     <div>
-                        <h3 class="font-audiowide text-yellow-400">PHASE 2: SUPER SAIYAN AWAKENING</h3>
-                        <p class="font-rubik text-gray-300">CEX Listings • Marketing Campaigns • Power Level 9000+</p>
+                        <h3 class="font-creepster text-yellow-400">PHASE 2: SUPER SAIYAN AWAKENING</h3>
+                        <p class="font-caesar-dressing text-gray-300">CEX Listings • Marketing Campaigns • Power Level 9000+</p>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg border-l-4 border-orange-400">
+                <div class="flex items-center space-x-4 bg-gray-800 bg-opacity-70 p-4 rounded-lg">
                     <div class="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                        <span class="font-orbitron text-black font-bold text-sm">3</span>
+                        <span class="font-butcherman text-black font-bold text-sm">3</span>
                     </div>
                     <div>
-                        <h3 class="font-audiowide text-orange-400">PHASE 3: LEGENDARY TRANSFORMATION</h3>
-                        <p class="font-rubik text-gray-300">NFT Collection • Staking Rewards • Universe Domination</p>
+                        <h3 class="font-creepster text-orange-400">PHASE 3: LEGENDARY TRANSFORMATION</h3>
+                        <p class="font-caesar-dressing text-gray-300">NFT Collection • Staking Rewards • Universe Domination</p>
                     </div>
                 </div>
             </div>
@@ -360,26 +362,26 @@
 
         <!-- Footer -->
         <div class="mt-16 text-center">
-            <p class="font-rubik text-gray-400 mb-4">Contract Address:</p>
-            <div class="bg-gray-800 bg-opacity-70 p-3 rounded-lg border border-yellow-400 max-w-lg mx-auto">
-                <code class="font-mono text-yellow-400 text-xs break-all">eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk</code>
+            <p class="font-caesar-dressing text-gray-400 mb-4">Contract Address:</p>
+            <div class="bg-gray-800 bg-opacity-70 p-3 rounded-lg max-w-lg mx-auto">
+                <code class="font-metal-mania text-yellow-400 text-xs break-all">eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk</code>
             </div>
             
             <!-- Community Links -->
             <div class="mt-8 space-y-4">
                 <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                     <a href="https://x.com/i/communities/1949972261819076965" target="_blank" rel="noopener noreferrer" 
-                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-orbitron transition-colors flex items-center gap-2">
+                       class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-metal-mania transition-colors flex items-center gap-2">
                         X COMMUNITY
                     </a>
                     <a href="https://letsbonk.fun/token/eV6P1gi6vKcmuy4Y4bZkjy3DFKCiiQCLDqtF2WLbonk" target="_blank" rel="noopener noreferrer" 
-                       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-orbitron transition-colors flex items-center gap-2">
+                       class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-metal-mania transition-colors flex items-center gap-2">
                         BONK LAUNCH
                     </a>
                 </div>
             </div>
             
-            <p class="font-rubik text-gray-500 mt-8 text-sm">
+            <p class="font-caesar-dressing text-gray-500 mt-8 text-sm">
                 $BONKU is a meme token on Solana. Do your own research. Not financial advice.
             </p>
         </div>
@@ -415,7 +417,7 @@
             ];
             
             const dynamicText = document.createElement('div');
-            dynamicText.className = 'dynamic-text font-press-start';
+            dynamicText.className = 'dynamic-text font-nosifer';
             dynamicText.textContent = phrases[Math.floor(Math.random() * phrases.length)];
             
             // Random position
@@ -838,22 +840,36 @@
         }
 
         function createPowerBallText() {
-            // Create text using canvas texture
+            // Create text using canvas texture with Naruto-style font
             const canvas = document.createElement('canvas');
             const context = canvas.getContext('2d');
             canvas.width = 512;
-            canvas.height = 128;
+            canvas.height = 256;
             
-            context.fillStyle = 'rgba(255, 235, 59, 1)';
-            context.font = 'bold 60px Orbitron';
+            // Clear canvas
+            context.clearRect(0, 0, 512, 256);
+            
+            // Create multiple text layers for visibility
             context.textAlign = 'center';
             context.textBaseline = 'middle';
-            context.fillText('$BONKU', 256, 64);
             
-            // Add glow effect
+            // Background outline for visibility
+            context.strokeStyle = 'rgba(0, 0, 0, 0.8)';
+            context.lineWidth = 8;
+            context.font = 'bold 48px Creepster';
+            context.strokeText('$BONKU', 256, 128);
+            
+            // Main text with glow
+            context.fillStyle = 'rgba(255, 235, 59, 1)';
             context.shadowColor = '#ffeb3b';
-            context.shadowBlur = 20;
-            context.fillText('$BONKU', 256, 64);
+            context.shadowBlur = 30;
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
+            context.fillText('$BONKU', 256, 128);
+            
+            // Add extra glow layer
+            context.shadowBlur = 50;
+            context.fillText('$BONKU', 256, 128);
 
             const texture = new THREE.CanvasTexture(canvas);
             const material = new THREE.SpriteMaterial({ 
@@ -863,8 +879,8 @@
             });
             
             powerBallText = new THREE.Sprite(material);
-            powerBallText.scale.set(2, 0.5, 1);
-            powerBallText.position.set(0, -1.8, 0);
+            powerBallText.scale.set(1.5, 0.75, 1);
+            powerBallText.position.set(0, 0, 0); // Position inside the ball
             powerBallScene.add(powerBallText);
         }
 
@@ -919,10 +935,12 @@
                 container.style.transform = `translateY(${float}px)`;
             }
             
-            // Gentle float animation for text
+            // Gentle float animation for text inside the ball
             if (powerBallText) {
-                powerBallText.position.y = -1.8 + Math.sin(time * 2) * 0.1;
-                powerBallText.material.rotation = Math.sin(time * 0.5) * 0.1;
+                powerBallText.position.y = Math.sin(time * 2) * 0.1;
+                powerBallText.material.rotation = Math.sin(time * 0.5) * 0.05;
+                // Make text always face camera
+                powerBallText.lookAt(powerBallCamera.position);
             }
             
             powerBallRenderer.render(powerBallScene, powerBallCamera);
